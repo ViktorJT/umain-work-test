@@ -6,7 +6,6 @@ import type { ImageProps } from "next/image";
 export type Props = {
   deliveryTime: string;
   button: ButtonProps;
-  className?: string;
   image: ImageProps;
   isOpen: boolean;
   title: string;
