@@ -1,13 +1,19 @@
 import { cva } from "class-variance-authority";
 
 export const tag = cva(
-  "border-[0.5px] border-black/40 bg-white inline-flex items-center gap-1 rounded-full px-3 py-1 text-body",
+  `
+    panel
+
+    px-3 py-1 
+    rounded-lg
+    inline-flex items-center gap-1 
+  `,
   {
     variants: {
       variant: {
-        open: "text-black",
+        open: "",
         closed: "text-black/40",
-        delivery: "text-black",
+        delivery: "",
       },
     },
     defaultVariants: {
