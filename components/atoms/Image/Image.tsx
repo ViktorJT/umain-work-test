@@ -1,4 +1,3 @@
-import { cx } from "class-variance-authority";
 import NextImage from "next/image";
 
 import { getFilename } from "@/utils/getFilename";
@@ -22,8 +21,8 @@ export default function Image({
       height={height}
       placeholder="blur"
       priority={priority}
+      className={className}
       blurDataURL={`/blur/${filename}-20.jpg`}
-      className={cx("object-cover", className)}
       src={`/webp/${filename}-${width ?? height}.webp`}
       onError={(e) => {
         e.currentTarget.src = `/images/${filename}-${width ?? height}.png`;
