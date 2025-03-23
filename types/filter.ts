@@ -15,3 +15,7 @@ export type FiltersResponse = {
 };
 
 export type Filters = Group[];
+
+export type ActiveFilters = {
+  activeFilters: Set<string>;
+};
