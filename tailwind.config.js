@@ -1,10 +1,9 @@
-/** @type {import('tailwindcss').Config} */
-
 const baseTypographyStyles = {
   lineHeight: "125%",
   letterSpacing: "-0.5px",
 };
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
