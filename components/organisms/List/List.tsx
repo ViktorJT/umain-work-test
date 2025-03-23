@@ -10,7 +10,7 @@ export default async function List(props: Props) {
   const restaurants = await getRestaurantsWithOpenStatus();
 
   return (
-    <div
+    <section
       className={cx(
         `
           grid  
@@ -40,6 +40,6 @@ export default async function List(props: Props) {
           />
         );
       })}
-    </div>
+    </section>
   );
 }
