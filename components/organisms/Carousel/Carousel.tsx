@@ -1,8 +1,8 @@
 import { Tile } from "@/components/atoms/Tile";
 
-import { categories } from "@/data/mock";
+import { Props } from "./Carousel.types";
 
-export default function Carousel() {
+export default function Carousel({ filters }: Props) {
   return (
     <section
       className={`
@@ -11,8 +11,8 @@ export default function Carousel() {
       `}
     >
       <div className="flex gap-2 py-2 min-w-max pr-4">
-        {categories.map(({ label, image }) => (
-          <Tile key={label} label={label} image={image} />
+        {filters.map((filter) => (
+          <Tile key={`${filter.name}-tile`} {...filter} />
         ))}
       </div>
     </section>

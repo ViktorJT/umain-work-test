@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
 
-import type { RestaurantsWithOpenStatus } from "@/types/restaurant";
+import type { RestaurantsWithOpenStatusResponse } from "@/types/restaurant";
 
-export type Props = RestaurantsWithOpenStatus &
+export type Props = RestaurantsWithOpenStatusResponse &
   ComponentPropsWithoutRef<"section">;

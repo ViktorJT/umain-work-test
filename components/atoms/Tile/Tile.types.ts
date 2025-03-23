@@ -1,8 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
 
-import type { ImageProps } from "@/components/atoms/Image";
+import { Filter } from "@/types/filter";
 
-export type Props = {
-  label: string;
-  image: ImageProps;
-} & ComponentPropsWithoutRef<"div">;
+export type Props = Filter & ComponentPropsWithoutRef<"div">;

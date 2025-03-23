@@ -1,11 +1,12 @@
-/* eslint-disable jsx-a11y/alt-text */
 "use client";
 
 import { cx } from "class-variance-authority";
+
 import { Image } from "@/components/atoms/Image";
+
 import type { Props } from "./Tile.types";
 
-export default function Tile({ label, image, className, ...props }: Props) {
+export default function Tile({ name, image_url, className }: Props) {
   return (
     <div
       className={cx(
@@ -22,7 +23,6 @@ export default function Tile({ label, image, className, ...props }: Props) {
         `,
         className,
       )}
-      {...props}
     >
       <p
         className={`
@@ -32,14 +32,16 @@ export default function Tile({ label, image, className, ...props }: Props) {
           flex-1 
         `}
       >
-        {label}
+        {name}
       </p>
+
       <Image
         priority
         className="shrink-0 -mr-3"
+        alt={name}
         width={80}
         height={80}
-        {...image}
+        src={image_url}
       />
     </div>
   );

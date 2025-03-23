@@ -9,10 +9,10 @@ export type Restaurant = {
 
 export type RestaurantWithOpenStatus = Restaurant & { isOpen: boolean };
 
-export type Restaurants = {
+export type RestaurantsResponse = {
   restaurants: Restaurant[];
 };
 
-export type RestaurantsWithOpenStatus = {
+export type RestaurantsWithOpenStatusResponse = {
   restaurants: RestaurantWithOpenStatus[];
 };
