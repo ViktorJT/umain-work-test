@@ -13,9 +13,9 @@ export default function Tile({ name, image_url, className }: Props) {
         `
           panel 
 
+          flex
           w-40 h-20
           snap-start
-          flex gap-2
           rounded-lg
           shadow-card
           overflow-hidden
@@ -28,21 +28,23 @@ export default function Tile({ name, image_url, className }: Props) {
         className={`
           min-w-0 break-words 
           text-title
-          pl-2 py-4
+          px-2 py-4
           flex-1 
         `}
       >
         {name}
       </p>
 
-      <Image
-        priority
-        className="shrink-0 -mr-3"
-        alt={name}
-        width={80}
-        height={80}
-        src={image_url}
-      />
+      {image_url && (
+        <Image
+          priority
+          className="shrink-0 -mr-3"
+          alt={name}
+          width={80}
+          height={80}
+          src={image_url}
+        />
+      )}
     </div>
   );
 }
