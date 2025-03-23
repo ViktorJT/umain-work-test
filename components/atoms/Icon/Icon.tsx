@@ -1,5 +1,7 @@
 "use client";
 
+import { cx } from "class-variance-authority";
+
 import type { IconMapType, Props } from "./Icon.types";
 
 import ArrowRight from "@/icons/arrow-right.svg";
@@ -19,7 +21,7 @@ export default function Icon({
 
   return (
     <Component
-      className={"w-full h-full " + className}
+      className={cx("w-full h-full fill-white", className)}
       aria-hidden={ariaHidden}
     />
   );
