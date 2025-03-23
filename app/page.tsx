@@ -1,30 +1,51 @@
 import { getRestaurantsWithOpenStatus } from "@/data/getRestaurantsWithOpenStatus";
-import { getFilters } from "@/data/getFilters";
+import { getFiltersByGroup } from "@/data/getFilters";
 
 import { getActiveFilters } from "@/utils/getActiveFilters";
 
+import type { SearchParams } from "@/types/page";
+
 import { Carousel } from "@/components/organisms/Carousel";
 import { Sidebar } from "@/components/organisms/Sidebar";
-import { List } from "@/components/organisms/List";
+// import { List } from "@/components/organisms/List";
 
 export default async function Home({
   searchParams,
 }: {
-  searchParams: { filters?: string };
+  searchParams: Promise<SearchParams>;
 }) {
-  const [restaurants, filters] = await Promise.all([
+  const [restaurants, filterGroups] = await Promise.all([
     getRestaurantsWithOpenStatus(),
-    getFilters(),
+    getFiltersByGroup(),
   ]);
 
-  const activeFilters = getActiveFilters(searchParams.filters ?? "");
+  console.log(typeof restaurants);
+
+  const activeFiltersByCategory = getActiveFilters(await searchParams);
 
   return (
     <main className="grid grid-cols-1 lg:grid-cols-[240px_6fr] max-w-screen">
-      <Sidebar filters={filters} activeFilters={activeFilters} />
+      <Sidebar
+        filterGroups={filterGroups}
+        activeFiltersByCategory={activeFiltersByCategory}
+      />
+
       <div className="flex flex-col gap-4">
-        <Carousel filters={filters[0].filters} activeFilters={activeFilters} />
-        <List restaurants={restaurants} />
+        <Carousel
+          activeFilters={activeFiltersByCategory[filterGroups[0].category]}
+          {...filterGroups[0]}
+        />
+
+        {/* <List */}
+        {/*   restaurants={restaurants} */}
+        {/*   activeFilters={ */}
+        {/*     new Set([ */}
+        {/*       ...activeFiltersByGroup.category, */}
+        {/*       ...activeFiltersByGroup.price, */}
+        {/*       ...activeFiltersByGroup.duration, */}
+        {/*     ]) */}
+        {/*   } */}
+        {/* /> */}
       </div>
     </main>
   );

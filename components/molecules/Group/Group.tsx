@@ -8,6 +8,7 @@ export default function Group({
   column = false,
   activeFilters,
   className,
+  category,
   heading,
   filters,
 }: Props) {
@@ -21,6 +22,7 @@ export default function Group({
         {filters.map((filter) => (
           <Chip
             active={activeFilters.has(filter.id)}
+            category={category}
             key={filter.id}
             {...filter}
           />

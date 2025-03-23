@@ -1,8 +1,9 @@
 import type { ComponentPropsWithoutRef } from "react";
 
-import type { Filter } from "@/types/filter";
+import type { Filter, FilterGroup } from "@/types/filter";
 
 export type Props = {
   active?: boolean;
-} & Filter &
+} & Pick<FilterGroup, "category"> &
+  Filter &
   ComponentPropsWithoutRef<"button">;

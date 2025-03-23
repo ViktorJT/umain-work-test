@@ -1,5 +1,7 @@
 import type { ComponentPropsWithoutRef } from "react";
 
-import { ActiveFilters, Group } from "@/types/filter";
+import { ActiveFilters, FilterGroup } from "@/types/filter";
 
-export type Props = Group & ActiveFilters & ComponentPropsWithoutRef<"div">;
+export type Props = { column: boolean } & FilterGroup &
+  ActiveFilters &
+  ComponentPropsWithoutRef<"div">;

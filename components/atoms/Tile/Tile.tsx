@@ -13,10 +13,11 @@ export default function Tile({
   id,
   name,
   active,
+  category,
   image_url,
   className,
 }: Props) {
-  const { toggle } = useToggleFilter();
+  const { toggle } = useToggleFilter(category);
 
   return (
     <button

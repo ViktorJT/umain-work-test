@@ -3,14 +3,16 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 
-export function useToggleFilter() {
+import type { FilterCategory } from "@/types/filter";
+
+export function useToggleFilter(category: FilterCategory) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
   const toggle = useCallback(
     (id: string) => {
       const current = new Set(
-        searchParams.get("filters")?.split(",").filter(Boolean) ?? [],
+        searchParams.get(category)?.split(",").filter(Boolean) ?? [],
       );
 
       if (current.has(id)) {
@@ -22,14 +24,14 @@ export function useToggleFilter() {
       const nextParams = new URLSearchParams(searchParams.toString());
 
       if (current.size > 0) {
-        nextParams.set("filters", [...current].join(","));
+        nextParams.set(category, [...current].join(","));
       } else {
-        nextParams.delete("filters");
+        nextParams.delete(category);
       }
 
       router.push(`/?${nextParams.toString()}`);
     },
-    [searchParams, router],
+    [category, router, searchParams],
   );
 
   return { toggle };

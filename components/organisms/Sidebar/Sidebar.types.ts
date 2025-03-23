@@ -1,8 +1,8 @@
 import { ComponentPropsWithoutRef } from "react";
 
-import { Group } from "@/types/filter";
+import type { ActiveFiltersByCategory, FilterGroup } from "@/types/filter";
 
 export type Props = {
-  filters: Group[];
-  activeFilters: Set<string>;
+  filterGroups: FilterGroup[];
+  activeFiltersByCategory: ActiveFiltersByCategory;
 } & ComponentPropsWithoutRef<"section">;

@@ -7,8 +7,14 @@ import { useToggleFilter } from "@/hooks/useToggleFilter";
 import type { Props } from "./Chip.types";
 import { chip } from "./Chip.styles";
 
-export default function Chip({ name, id, active = false, className }: Props) {
-  const { toggle } = useToggleFilter();
+export default function Chip({
+  active = false,
+  className,
+  category,
+  name,
+  id,
+}: Props) {
+  const { toggle } = useToggleFilter(category);
 
   return (
     <button

@@ -2,7 +2,7 @@ import { Tile } from "@/components/atoms/Tile";
 
 import { Props } from "./Carousel.types";
 
-export default function Carousel({ filters, activeFilters }: Props) {
+export default function Carousel({ category, filters, activeFilters }: Props) {
   return (
     <section
       className={`
@@ -15,6 +15,7 @@ export default function Carousel({ filters, activeFilters }: Props) {
           <Tile
             active={activeFilters.has(filter.id)}
             key={`${filter.name}-tile`}
+            category={category}
             {...filter}
           />
         ))}
