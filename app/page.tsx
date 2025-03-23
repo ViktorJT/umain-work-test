@@ -7,7 +7,8 @@ import type { SearchParams } from "@/types/page";
 
 import { Carousel } from "@/components/organisms/Carousel";
 import { Sidebar } from "@/components/organisms/Sidebar";
-// import { List } from "@/components/organisms/List";
+import { List } from "@/components/organisms/List";
+import { getFilteredRestaurants } from "@/utils/getFilteredRestaurants";
 
 export default async function Home({
   searchParams,
@@ -19,9 +20,11 @@ export default async function Home({
     getFiltersByGroup(),
   ]);
 
-  console.log(typeof restaurants);
-
   const activeFiltersByCategory = getActiveFilters(await searchParams);
+  const filteredRestaurants = getFilteredRestaurants({
+    activeFiltersByCategory,
+    restaurants,
+  });
 
   return (
     <main className="grid grid-cols-1 lg:grid-cols-[240px_6fr] max-w-screen">
@@ -36,16 +39,7 @@ export default async function Home({
           {...filterGroups[0]}
         />
 
-        {/* <List */}
-        {/*   restaurants={restaurants} */}
-        {/*   activeFilters={ */}
-        {/*     new Set([ */}
-        {/*       ...activeFiltersByGroup.category, */}
-        {/*       ...activeFiltersByGroup.price, */}
-        {/*       ...activeFiltersByGroup.duration, */}
-        {/*     ]) */}
-        {/*   } */}
-        {/* /> */}
+        <List restaurants={filteredRestaurants} />
       </div>
     </main>
   );

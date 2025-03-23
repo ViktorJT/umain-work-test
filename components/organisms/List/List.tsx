@@ -17,9 +17,13 @@ export default function List({ restaurants, className }: Props) {
         className,
       )}
     >
-      {restaurants.map((restaurant, i) => {
-        return <Card key={restaurant.id} index={i} {...restaurant} />;
-      })}
+      {restaurants.length ? (
+        restaurants.map((restaurant, i) => {
+          return <Card key={restaurant.id} index={i} {...restaurant} />;
+        })
+      ) : (
+        <p>No restaurants found, please reset your filters</p>
+      )}
     </section>
   );
 }
