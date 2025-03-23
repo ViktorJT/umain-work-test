@@ -16,6 +16,7 @@ export default function Tile({ label, image, className, ...props }: Props) {
           snap-start
           flex gap-2
           rounded-lg
+          shadow-card
           overflow-hidden
           items-center justify-between
         `,

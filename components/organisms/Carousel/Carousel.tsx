@@ -12,7 +12,7 @@ export default function Carousel() {
         scroll-smooth snap-x scroll-pl-4
       `}
     >
-      <div className="flex gap-3 py-2 min-w-max pr-4">
+      <div className="flex gap-2 py-2 min-w-max pr-4">
         {categories.map(({ label, image }) => (
           <Tile key={label} label={label} image={image} />
         ))}
