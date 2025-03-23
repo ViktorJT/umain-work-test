@@ -10,6 +10,7 @@ import { Tag } from "@/components/atoms/Tag";
 import type { Props } from "./Card.types";
 
 export default function Card({
+  index,
   title,
   image,
   button,
@@ -36,11 +37,12 @@ export default function Card({
       {...props}
     >
       <Image
-        width={140}
+        priority={index <= 3}
         height={140}
+        width={140}
         className={`
           absolute 
-          top-0 right-0
+          -top-7 -right-7
           pointer-events-none select-none
         `}
         {...image}

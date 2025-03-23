@@ -8,5 +8,6 @@ export type Props = {
   button: ButtonProps;
   image: ImageProps;
   isOpen: boolean;
+  index: number;
   title: string;
 } & ComponentPropsWithoutRef<"div">;

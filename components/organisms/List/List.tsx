@@ -21,9 +21,10 @@ export default async function List(props: Props) {
         props.className,
       )}
     >
-      {restaurants.map((restaurant) => {
+      {restaurants.map((restaurant, i) => {
         return (
           <Card
+            index={i}
             key={restaurant.id}
             title={restaurant.name}
             image={{
