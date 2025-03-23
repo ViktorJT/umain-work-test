@@ -4,25 +4,24 @@ import { cx } from "class-variance-authority";
 
 import { Image } from "@/components/atoms/Image";
 
+import { useToggleFilter } from "@/hooks/useToggleFilter";
+
 import type { Props } from "./Tile.types";
+import { tile } from "./Tile.styles";
 
-export default function Tile({ name, image_url, className }: Props) {
+export default function Tile({
+  id,
+  name,
+  active,
+  image_url,
+  className,
+}: Props) {
+  const { toggle } = useToggleFilter();
+
   return (
-    <div
-      className={cx(
-        `
-          panel 
-
-          flex
-          w-40 h-20
-          snap-start
-          rounded-lg
-          shadow-card
-          overflow-hidden
-          items-center justify-between
-        `,
-        className,
-      )}
+    <button
+      onClick={() => toggle(id)}
+      className={cx(tile({ active }), className)}
     >
       <p
         className={`
@@ -45,6 +44,6 @@ export default function Tile({ name, image_url, className }: Props) {
           src={image_url}
         />
       )}
-    </div>
+    </button>
   );
 }

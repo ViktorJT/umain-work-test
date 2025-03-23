@@ -2,7 +2,7 @@ import { Tile } from "@/components/atoms/Tile";
 
 import { Props } from "./Carousel.types";
 
-export default function Carousel({ filters }: Props) {
+export default function Carousel({ filters, activeFilters }: Props) {
   return (
     <section
       className={`
@@ -12,7 +12,11 @@ export default function Carousel({ filters }: Props) {
     >
       <div className="flex gap-2 py-2 min-w-max pr-4">
         {filters.map((filter) => (
-          <Tile key={`${filter.name}-tile`} {...filter} />
+          <Tile
+            active={activeFilters.has(filter.id)}
+            key={`${filter.name}-tile`}
+            {...filter}
+          />
         ))}
       </div>
     </section>

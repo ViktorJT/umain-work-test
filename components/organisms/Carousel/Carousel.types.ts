@@ -1,7 +1,8 @@
 import { ComponentPropsWithoutRef } from "react";
 
-import { Filter } from "@/types/filter";
+import type { ActiveFilters, Filter } from "@/types/filter";
 
 export type Props = {
   filters: Filter[];
-} & ComponentPropsWithoutRef<"section">;
+} & ActiveFilters &
+  ComponentPropsWithoutRef<"section">;
