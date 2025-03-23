@@ -7,8 +7,8 @@ import type { Props } from "./Image.types";
 
 export default function Image({
   priority = false,
-  height = 64,
-  width = 64,
+  height = 140,
+  width = 140,
   className,
   alt = "",
   src,
@@ -22,11 +22,11 @@ export default function Image({
       height={height}
       placeholder="blur"
       priority={priority}
-      src={`/images/${filename}.webp`}
-      blurDataURL={`/images/${filename}.jpg`}
+      blurDataURL={`/blur/${filename}-20.jpg`}
       className={cx("object-cover", className)}
+      src={`/webp/${filename}-${width ?? height}.webp`}
       onError={(e) => {
-        e.currentTarget.src = `/images/${filename}.png`;
+        e.currentTarget.src = `/images/${filename}-${width ?? height}.png`;
       }}
     />
   );
