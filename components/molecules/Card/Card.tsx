@@ -1,6 +1,4 @@
 /* eslint-disable jsx-a11y/alt-text */
-"use client";
-
 import { cx } from "class-variance-authority";
 
 import { Button } from "@/components/atoms/Button";

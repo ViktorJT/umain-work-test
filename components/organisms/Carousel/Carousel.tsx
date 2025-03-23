@@ -1,5 +1,3 @@
-"use client";
-
 import { Tile } from "@/components/atoms/Tile";
 
 import { categories } from "@/data/mock";
