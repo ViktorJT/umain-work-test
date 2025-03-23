@@ -2,7 +2,7 @@ import { Group } from "@/components/molecules/Group";
 
 import type { Props } from "./Sidebar.types";
 
-export default function Sidebar({ filters }: Props) {
+export default function Sidebar({ filters, activeFilters }: Props) {
   return (
     <aside
       className={`
@@ -18,7 +18,11 @@ export default function Sidebar({ filters }: Props) {
       <h2 className="text-h1">Filter</h2>
 
       {filters.map((group) => (
-        <Group key={`${group.heading}-group`} {...group} />
+        <Group
+          key={`${group.heading}-group`}
+          activeFilters={activeFilters}
+          {...group}
+        />
       ))}
     </aside>
   );

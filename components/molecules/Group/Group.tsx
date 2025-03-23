@@ -6,6 +6,7 @@ import type { Props } from "./Group.types";
 
 export default function Group({
   column = false,
+  activeFilters,
   className,
   heading,
   filters,
@@ -18,7 +19,11 @@ export default function Group({
         className={cx("flex items-start flex-wrap gap-2", column && "flex-col")}
       >
         {filters.map((filter) => (
-          <Chip key={filter.id} {...filter} />
+          <Chip
+            active={activeFilters.has(filter.id)}
+            key={filter.id}
+            {...filter}
+          />
         ))}
       </div>
     </div>

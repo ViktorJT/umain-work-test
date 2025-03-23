@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
 
-import { Group } from "@/types/filter";
+import { ActiveFilters, Group } from "@/types/filter";
 
-export type Props = Group & ComponentPropsWithoutRef<"div">;
+export type Props = Group & ActiveFilters & ComponentPropsWithoutRef<"div">;

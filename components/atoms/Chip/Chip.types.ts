@@ -1,6 +1,8 @@
 import type { ComponentPropsWithoutRef } from "react";
 
+import type { Filter } from "@/types/filter";
+
 export type Props = {
   active?: boolean;
-  name: string;
-} & ComponentPropsWithoutRef<"button">;
+} & Filter &
+  ComponentPropsWithoutRef<"button">;
