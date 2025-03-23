@@ -5,6 +5,7 @@ export type Filter = {
 };
 
 export type Group = {
+  column?: boolean;
   heading: string;
   filters: Filter[];
 };

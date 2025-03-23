@@ -8,6 +8,7 @@ export async function getFilters(): Promise<[Group, Group, Group]> {
   const categories = {
     heading: "Food Category",
     filters: res.filters,
+    column: true,
   };
 
   const deliveryTime = {
