@@ -1,3 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
 
-export type Props = ComponentPropsWithoutRef<"div">;
+import type { RestaurantsWithOpenStatus } from "@/types/restaurant";
+
+export type Props = RestaurantsWithOpenStatus &
+  ComponentPropsWithoutRef<"section">;

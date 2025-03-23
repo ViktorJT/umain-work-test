@@ -1,14 +1,10 @@
 import { cx } from "class-variance-authority";
 
-import { getRestaurantsWithOpenStatus } from "@/data/getRestaurantsWithOpenStatus";
-
 import { Card } from "@/components/molecules/Card";
 
 import type { Props } from "./List.types";
 
-export default async function List(props: Props) {
-  const restaurants = await getRestaurantsWithOpenStatus();
-
+export default function List({ restaurants, className }: Props) {
   return (
     <section
       className={cx(
@@ -18,28 +14,11 @@ export default async function List(props: Props) {
           auto-rows-[200px]
           gap-2 px-4
         `,
-        props.className,
+        className,
       )}
     >
       {restaurants.map((restaurant, i) => {
-        return (
-          <Card
-            index={i}
-            key={restaurant.id}
-            title={restaurant.name}
-            image={{
-              src: restaurant.image_url,
-              alt: restaurant.name,
-            }}
-            isOpen={restaurant.isOpen}
-            deliveryTime={`${restaurant.delivery_time_minutes} min`}
-            button={{
-              href: `/restaurants/${restaurant.id}`,
-              ariaLabel: `Go to ${restaurant.name}`,
-              icon: { name: "arrow-right" },
-            }}
-          />
-        );
+        return <Card key={restaurant.id} index={i} {...restaurant} />;
       })}
     </section>
   );

@@ -1,13 +1,8 @@
 import type { ComponentPropsWithoutRef } from "react";
 
-import type { ButtonProps } from "@/components/atoms/Button";
-import type { ImageProps } from "next/image";
+import type { RestaurantWithOpenStatus } from "@/types/restaurant";
 
 export type Props = {
-  deliveryTime: string;
-  button: ButtonProps;
-  image: ImageProps;
-  isOpen: boolean;
   index: number;
-  title: string;
-} & ComponentPropsWithoutRef<"div">;
+} & RestaurantWithOpenStatus &
+  ComponentPropsWithoutRef<"div">;

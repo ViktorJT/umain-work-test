@@ -10,14 +10,13 @@ import { Tag } from "@/components/atoms/Tag";
 import type { Props } from "./Card.types";
 
 export default function Card({
+  delivery_time_minutes,
+  image_url,
   index,
-  title,
-  image,
-  button,
+  id,
+  name,
   isOpen,
   className,
-  deliveryTime,
-  ...props
 }: Props) {
   return (
     <div
@@ -34,7 +33,6 @@ export default function Card({
         `,
         className,
       )}
-      {...props}
     >
       <Image
         priority={index <= 3}
@@ -45,7 +43,8 @@ export default function Card({
           -top-7 -right-7
           pointer-events-none select-none
         `}
-        {...image}
+        alt={name}
+        src={image_url}
       />
 
       <div
@@ -60,13 +59,19 @@ export default function Card({
             variant={isOpen ? "open" : "closed"}
             label={isOpen ? "Open" : "Closed"}
           />
-          {isOpen && <Tag variant="delivery" label={deliveryTime} />}
+          {isOpen && (
+            <Tag variant="delivery" label={`${delivery_time_minutes} min`} />
+          )}
         </div>
 
         <div className="flex gap-2 items-end justify-between">
-          <p className="text-h1 line-clamp-3">{title}</p>
+          <p className="text-h1 line-clamp-3">{name}</p>
 
-          <Button {...button} />
+          <Button
+            href={`/restaurants/${id}`}
+            ariaLabel={`Go to ${name}`}
+            icon={{ name: "arrow-right" }}
+          />
         </div>
       </div>
     </div>
