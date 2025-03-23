@@ -16,12 +16,18 @@ export default function Button({
 }: Props) {
   return (
     <Link
+      aria-label={ariaLabel}
       className={cx(
-        "inline-block p-2.5 size-8  bg-green rounded-full",
+        `
+          shrink-0
+          inline-block 
+          p-2.5 size-8  
+          bg-green 
+          rounded-full
+        `,
         className,
       )}
       href={href}
-      aria-label={ariaLabel}
       {...props}
     >
       <Icon {...icon} />
