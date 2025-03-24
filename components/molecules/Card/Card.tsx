@@ -1,11 +1,13 @@
 import { cx } from "class-variance-authority";
 
+import { formatDeliveryTime } from "@/utils/formatDeliveryTime";
+
 import { Button } from "@/components/atoms/Button";
 import { Image } from "@/components/atoms/Image";
 import { Tag } from "@/components/atoms/Tag";
 
 import type { Props } from "./Card.types";
-import { formatDeliveryTime } from "@/utils/formatDeliveryTime";
+import { container, footer, image } from "./Card.styles";
 
 export default function Card({
   delivery_time_minutes,
@@ -17,32 +19,14 @@ export default function Card({
   className,
 }: Props) {
   return (
-    <div
-      className={cx(
-        `
-          panel
-
-          p-4 
-          relative 
-          rounded-lg
-          shadow-card
-          overflow-hidden 
-          flex flex-col gap-2 
-        `,
-        className,
-      )}
-    >
+    <div className={cx(container({ isOpen }), className)}>
       <Image
+        className={image({ isOpen })}
         priority={index <= 3}
+        src={image_url}
         height={140}
         width={140}
-        className={`
-          absolute 
-          -top-7 -right-7
-          pointer-events-none select-none
-        `}
         alt={name}
-        src={image_url}
       />
 
       <div
@@ -57,6 +41,7 @@ export default function Card({
             variant={isOpen ? "open" : "closed"}
             label={isOpen ? "Open" : "Closed"}
           />
+
           {isOpen && (
             <Tag
               variant="delivery"
@@ -65,7 +50,7 @@ export default function Card({
           )}
         </div>
 
-        <div className="flex gap-2 items-end justify-between">
+        <div className={footer({ isOpen })}>
           <p className="text-h1 line-clamp-3">{name}</p>
 
           <Button
@@ -74,6 +59,29 @@ export default function Card({
             icon={{ name: "arrow-right" }}
           />
         </div>
+
+        {!isOpen && (
+          <div
+            className={`
+              m-auto 
+              absolute inset-0 
+              flex items-center justify-center
+            `}
+          >
+            <p
+              className={`
+                panel 
+
+                px-3 py-2 
+                rounded-lg 
+                leading-none 
+                bg-off-white
+              `}
+            >
+              Opens tomorrow at 12pm
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
