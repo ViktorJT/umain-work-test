@@ -4,8 +4,9 @@ export const tag = cva(
   `
     panel
 
-    px-3 py-1 
-    rounded-lg
+    px-3 py-2 
+    rounded-full
+    text-body leading-none
     inline-flex items-center gap-1 
   `,
   {
