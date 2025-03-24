@@ -35,6 +35,8 @@ export default async function Home({
       className={`
           pb-9 pt-24 lg:pt-14
           pl-0 lg:pl-4 2xl:pl-0
+          max-w-screen-2xl
+          mx-auto
         `}
     >
       <Logo className="hidden lg:block w-72 ml-6 mb-10" />
@@ -44,7 +46,6 @@ export default async function Home({
           grid 
           w-full mx-auto
           overflow-x-clip
-          max-w-screen-2xl
           grid-cols-1 lg:grid-cols-[240px_1fr] 
         `}
       >
