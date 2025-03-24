@@ -1,0 +1,27 @@
+{
+  "name": "Umain Work Test",
+  "short_name": "Munchies",
+  "description": "Application for Senior Web Developer role at Umain",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAFA",
+  "theme_color": "#00703A",
+  "icons": [
+    {
+      "src": "/meta/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/meta/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/meta/maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
