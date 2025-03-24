@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply text-body bg-off-white;
+  }
+}
+
 @layer components {
   .panel {
     @apply border-[.5px] border-black/10;
