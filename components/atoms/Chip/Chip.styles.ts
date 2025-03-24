@@ -16,6 +16,7 @@ export const chip = cva(
       active: {
         true: `
           bg-green border-green
+          md:hover:text-black
           text-white
         `,
         false: "",
