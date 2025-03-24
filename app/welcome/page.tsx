@@ -14,13 +14,16 @@ export default function WelcomePage() {
     >
       <Logo className="w-40 fill-white" />
 
-      <div className="flex flex-col gap-4">
-        <h1 className="text-huge font-bold leading-none">
-          Treat
-          <br />
-          yourself.
-        </h1>
-        <p className="text-blurb max-w-[280px]">
+      <div
+        className={`
+          flex flex-col 
+          max-w-[280px] 
+          text-balance 
+          gap-4
+        `}
+      >
+        <h1 className="text-huge">Treat yourself.</h1>
+        <p className="text-blurb">
           Find the best restaurants in your city and get it delivered to your
           place!
         </p>
