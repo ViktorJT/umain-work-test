@@ -4,6 +4,7 @@
 
 @layer base {
   body {
+    font-family: "SF Pro text", "Helvetica Neue", "Helvetica", sans-serif;
     @apply text-body bg-off-white;
   }
 }
