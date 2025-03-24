@@ -1,3 +1,5 @@
+import { getDeliveryTimeId } from "@/utils/getDeliveryTimeId";
+
 import { ActiveFiltersByCategory } from "@/types/filter";
 import type { RestaurantWithOpenStatus } from "@/types/restaurant";
 
@@ -17,8 +19,14 @@ export function getFilteredRestaurants({
   );
 
   const filteredRestaurants = allActiveFilters.size
-    ? restaurants.filter((restaurant) =>
-        restaurant.filter_ids.some((id) => allActiveFilters.has(id)),
+    ? restaurants.filter(
+        ({ filter_ids, delivery_time_minutes, price_range_id }) => {
+          const delivery_time_id = getDeliveryTimeId(delivery_time_minutes);
+
+          return [...filter_ids, delivery_time_id, price_range_id].some((id) =>
+            allActiveFilters.has(id),
+          );
+        },
       )
     : restaurants;
 

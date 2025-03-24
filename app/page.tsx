@@ -1,5 +1,5 @@
 import { getRestaurantsWithOpenStatus } from "@/data/getRestaurantsWithOpenStatus";
-import { getFiltersByGroup } from "@/data/getFilters";
+import { getFiltersByGroup } from "@/data/getFiltersByGroup";
 
 import { getActiveFilters } from "@/utils/getActiveFilters";
 
@@ -15,12 +15,11 @@ export default async function Home({
 }: {
   searchParams: Promise<SearchParams>;
 }) {
-  const [restaurants, filterGroups] = await Promise.all([
-    getRestaurantsWithOpenStatus(),
-    getFiltersByGroup(),
-  ]);
+  const restaurants = await getRestaurantsWithOpenStatus();
+  const filterGroups = await getFiltersByGroup(restaurants);
 
   const activeFiltersByCategory = getActiveFilters(await searchParams);
+
   const filteredRestaurants = getFilteredRestaurants({
     activeFiltersByCategory,
     restaurants,

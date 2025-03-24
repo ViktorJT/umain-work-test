@@ -5,6 +5,7 @@ import { Image } from "@/components/atoms/Image";
 import { Tag } from "@/components/atoms/Tag";
 
 import type { Props } from "./Card.types";
+import { formatDeliveryTime } from "@/utils/formatDeliveryTime";
 
 export default function Card({
   delivery_time_minutes,
@@ -57,7 +58,10 @@ export default function Card({
             label={isOpen ? "Open" : "Closed"}
           />
           {isOpen && (
-            <Tag variant="delivery" label={`${delivery_time_minutes} min`} />
+            <Tag
+              variant="delivery"
+              label={formatDeliveryTime(delivery_time_minutes)}
+            />
           )}
         </div>
 

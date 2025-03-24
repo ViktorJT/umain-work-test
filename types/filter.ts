@@ -1,5 +1,10 @@
 export type FilterCategory = "food" | "price" | "duration";
 
+export type PriceRangeFilter = {
+  range: string;
+  id: string;
+};
+
 export type Filter = {
   image_url?: string;
   name: string;
