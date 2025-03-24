@@ -11,7 +11,9 @@ export async function getUniquePriceRanges(restaurants: Restaurant[]) {
 
   return await Promise.all(
     uniquePriceRangeIds.map((id) =>
-      fetchData<PriceRangeFilter>(ENDPOINTS.PRICE_RANGE + id),
+      fetchData<PriceRangeFilter>(ENDPOINTS.PRICE_RANGE + id, {
+        next: { revalidate: false }, // This probably never changes? Mihgt probably never need a redeployment so just keeping it off
+      }),
     ),
   );
 }

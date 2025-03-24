@@ -17,7 +17,7 @@ export async function getFiltersByGroup(
   restaurants: Restaurant[],
 ): FiltersByGroupResponse {
   const [foodFilterRes, uniquePricesRes] = await Promise.all([
-    fetchData<FiltersResponse>("/filter"),
+    fetchData<FiltersResponse>("/filter", { next: { revalidate: 60 * 60 } }), // probably rarely chnanges so giving this some time but probably wouldn't turn off like the price ranges
     getUniquePriceRanges(restaurants),
   ]);
 
