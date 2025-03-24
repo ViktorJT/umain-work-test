@@ -3,6 +3,7 @@ import { cx } from "class-variance-authority";
 import { Card } from "@/components/molecules/Card";
 
 import type { Props } from "./List.types";
+import { NoResults } from "@/components/molecules/NoResults";
 
 export default function List({ restaurants, className }: Props) {
   return (
@@ -22,7 +23,7 @@ export default function List({ restaurants, className }: Props) {
           return <Card key={restaurant.id} index={i} {...restaurant} />;
         })
       ) : (
-        <p>No restaurants found, please reset your filters</p>
+        <NoResults />
       )}
     </section>
   );
