@@ -22,8 +22,8 @@ export default function NoResults({ className }: Props) {
 
       <button
         className={chipStyles({ active: false })}
-        type="button"
         onClick={clearFilters}
+        type="button"
       >
         clear filters
       </button>

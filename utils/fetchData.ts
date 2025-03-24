@@ -9,8 +9,8 @@ export async function fetchData<T>(
     headers: {
       "Content-Type": "application/json",
     },
-    ...init,
     next: { revalidate: 60 },
+    ...init,
   });
 
   if (!res.ok) {
