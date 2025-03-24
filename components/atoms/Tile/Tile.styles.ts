@@ -6,7 +6,6 @@ export const tile = cva(
 
     flex
     w-40 h-20
-    snap-start
     rounded-lg
     shadow-card
     overflow-hidden

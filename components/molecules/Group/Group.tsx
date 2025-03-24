@@ -4,7 +4,10 @@ import { Chip } from "@/components/atoms/Chip";
 
 import type { Props } from "./Group.types";
 
+import { title, container, wrapper } from "./Group.styles";
+
 export default function Group({
+  overflow = false,
   column = false,
   activeFilters,
   className,
@@ -13,20 +16,21 @@ export default function Group({
   filters,
 }: Props) {
   return (
-    <div className={cx("flex flex-col gap-2", className)}>
-      <h3 className="text-subtitle">{heading}</h3>
+    <div className={cx("flex flex-col", className)}>
+      <h3 className={title({ overflow })}>{heading}</h3>
 
-      <div
-        className={cx("flex items-start flex-wrap gap-2", column && "flex-col")}
-      >
-        {filters.map((filter) => (
-          <Chip
-            active={activeFilters.has(filter.id)}
-            category={category}
-            key={filter.id}
-            {...filter}
-          />
-        ))}
+      <div className={container({ column, overflow })}>
+        <div className={wrapper({ overflow })}>
+          {filters.map((filter, i: number) => (
+            <Chip
+              className="snap-start"
+              active={activeFilters.has(filter.id)}
+              category={category}
+              key={filter.id + i}
+              {...filter}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

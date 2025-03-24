@@ -1,14 +1,17 @@
 import { getRestaurantsWithOpenStatus } from "@/data/getRestaurantsWithOpenStatus";
 import { getFiltersByGroup } from "@/data/getFiltersByGroup";
 
+import { getFilteredRestaurants } from "@/utils/getFilteredRestaurants";
 import { getActiveFilters } from "@/utils/getActiveFilters";
 
 import type { SearchParams } from "@/types/page";
 
+import Logo from "@/icons/logo.svg";
+
 import { Carousel } from "@/components/organisms/Carousel";
 import { Sidebar } from "@/components/organisms/Sidebar";
 import { List } from "@/components/organisms/List";
-import { getFilteredRestaurants } from "@/utils/getFilteredRestaurants";
+import { Group } from "@/components/molecules/Group";
 
 export default async function Home({
   searchParams,
@@ -25,17 +28,35 @@ export default async function Home({
     restaurants,
   });
 
+  const [featuredCategory, secondaryCategory] = filterGroups;
+
   return (
-    <main className="grid grid-cols-1 lg:grid-cols-[240px_6fr] max-w-screen">
+    <main
+      className={`
+        grid 
+        pb-9 pt-24
+        w-full max-w-screen-xl mx-auto
+        grid-cols-1 lg:grid-cols-[240px_1fr] 
+      `}
+    >
       <Sidebar
         filterGroups={filterGroups}
         activeFiltersByCategory={activeFiltersByCategory}
       />
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col overflow-hidden">
+        <Logo className="w-40 ml-6" />
+
+        <Group
+          className="block lg:hidden"
+          activeFilters={activeFiltersByCategory[secondaryCategory.category]}
+          overflow={true}
+          {...secondaryCategory}
+        />
+
         <Carousel
-          activeFilters={activeFiltersByCategory[filterGroups[0].category]}
-          {...filterGroups[0]}
+          activeFilters={activeFiltersByCategory[featuredCategory.category]}
+          {...featuredCategory}
         />
 
         <List restaurants={filteredRestaurants} />
