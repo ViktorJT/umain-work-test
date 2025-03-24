@@ -37,7 +37,7 @@ export default function WelcomePage() {
           text-center 
           border-white border-[1px] 
 
-          hover:bg-white hover:text-green
+          md:hover:bg-white md:hover:text-green
           transition-colors
         `}
       >

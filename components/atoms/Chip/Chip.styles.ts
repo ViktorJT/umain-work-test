@@ -8,7 +8,7 @@ export const chip = cva(
     rounded-lg
     text-body leading-none
 
-    hover:border-green hover:bg-off-white
+    md:hover:border-green md:hover:bg-off-white
     transition-colors
   `,
   {

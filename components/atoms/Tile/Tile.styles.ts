@@ -12,8 +12,8 @@ export const tile = cva(
     overflow-hidden
     justify-between
 
-    hover:border-green
-    group-hover/carousel:shadow-none hover:!shadow-card-hover
+    md:hover:border-green
+    md:group-hover/carousel:shadow-none md:hover:!shadow-card-hover
     transition-all
   `,
   {

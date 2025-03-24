@@ -12,8 +12,8 @@ export const container = cva(
     overflow-hidden 
     flex flex-col gap-2 
 
-    hover:border-green
-    group-hover/list:shadow-none hover:!shadow-card-hover
+    md:hover:border-green
+    md:group-hover/list:shadow-none md:hover:!shadow-card-hover
     transition-all
   `,
   {
