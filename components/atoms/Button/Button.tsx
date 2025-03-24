@@ -22,15 +22,18 @@ export default function Button({
           shrink-0
           inline-block 
           p-2.5 size-8  
-          bg-green 
+          bg-green border-[0.5px] border-green
           rounded-full
+          transition-colors
+
+        group-hover/card:bg-off-white
         `,
         className,
       )}
       href={href}
       {...props}
     >
-      <Icon {...icon} />
+      <Icon className="group-hover/card:fill-green" {...icon} />
     </Link>
   );
 }

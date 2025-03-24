@@ -54,13 +54,19 @@ module.exports = {
           fontSize: "12px",
         },
       },
-      boxShadow: {
-        card: `-4px 2px 10px 0px #00000005,
-               -16px 9px 18px 0px #00000005,
-               -35px 20px 24px 0px #00000000,
-               -63px 36px 29px 0px #00000000,
-               -98px 56px 32px 0px #00000000`,
-      },
+    },
+    boxShadow: {
+      card: `-4px 2px 10px 0px #00000005,
+         -16px 9px 18px 0px #00000005,
+         -35px 20px 24px 0px #00000000,
+         -63px 36px 29px 0px #00000000,
+         -98px 56px 32px 0px #00000000`,
+
+      "card-hover": `-4px 2px 10px 0px #00000006,
+         -16px 9px 18px 0px #00000006,
+         -35px 20px 24px 0px #00000000,
+         -63px 36px 29px 0px #00000000,
+         -98px 56px 32px 0px #00000000`,
     },
   },
   plugins: [

@@ -14,6 +14,7 @@ export default function List({ restaurants, className }: Props) {
           grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(3,_minmax(0,_320px))] 
           auto-rows-[200px]
           gap-2 px-4
+          group/list
         `,
         className,
       )}

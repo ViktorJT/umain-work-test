@@ -4,9 +4,12 @@ export const chip = cva(
   `
     panel
 
-    px-4 py-3
+    px-3 py-2
     rounded-lg
     text-body leading-none
+
+    hover:border-green hover:bg-off-white
+    transition-colors
   `,
   {
     variants: {

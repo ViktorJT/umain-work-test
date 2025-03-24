@@ -7,7 +7,7 @@ import { Image } from "@/components/atoms/Image";
 import { useToggleFilter } from "@/hooks/useToggleFilter";
 
 import type { Props } from "./Tile.types";
-import { tile } from "./Tile.styles";
+import { image, tile } from "./Tile.styles";
 
 export default function Tile({
   id,
@@ -38,7 +38,7 @@ export default function Tile({
       {image_url && (
         <Image
           priority
-          className="shrink-0 -mr-3"
+          className={image({ active })}
           alt={name}
           width={80}
           height={80}

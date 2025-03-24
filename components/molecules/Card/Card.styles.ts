@@ -3,6 +3,7 @@ import { cva } from "class-variance-authority";
 export const container = cva(
   `
     panel
+    group/card
 
     p-4 
     relative 
@@ -10,6 +11,10 @@ export const container = cva(
     shadow-card
     overflow-hidden 
     flex flex-col gap-2 
+
+    hover:border-green
+    group-hover/list:shadow-none hover:!shadow-card-hover
+    transition-all
   `,
   {
     variants: {
@@ -29,11 +34,12 @@ export const image = cva(
     absolute 
     -top-7 -right-7
     pointer-events-none select-none
+    transition-transform duration-300
   `,
   {
     variants: {
       isOpen: {
-        true: "",
+        true: "group-hover/card:scale-125 group-hover/card:-rotate-12",
         false: "opacity-40",
       },
     },

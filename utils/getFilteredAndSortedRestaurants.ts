@@ -8,7 +8,7 @@ type Props = {
   activeFiltersByCategory: ActiveFiltersByCategory;
 };
 
-export function getFilteredRestaurants({
+export function getFilteredAndSortedRestaurants({
   restaurants,
   activeFiltersByCategory,
 }: Props) {
@@ -42,5 +42,9 @@ export function getFilteredRestaurants({
       )
     : restaurants;
 
-  return filteredRestaurants;
+  const sortedFilteredRestaurants = filteredRestaurants.sort(
+    (a, b) => b.rating - a.rating,
+  );
+
+  return sortedFilteredRestaurants;
 }
