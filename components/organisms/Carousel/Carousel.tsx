@@ -14,15 +14,15 @@ export default function Carousel({
     <section
       className={cx(
         `
-          px-4
+          px-6
           group/carousel
           overflow-x-auto 
-          scroll-smooth snap-x scroll-pl-4
+          scroll-smooth snap-x scroll-pl-6
         `,
         className,
       )}
     >
-      <div className="flex gap-2 py-2 pr-4">
+      <div className="flex gap-2.5 py-2 pr-6">
         {filters.map((filter) => (
           <Tile
             className={`

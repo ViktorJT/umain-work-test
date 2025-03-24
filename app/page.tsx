@@ -34,12 +34,18 @@ export default async function Home({
     <main
       className={`
           pb-9 pt-24 lg:pt-14
-          pl-0 lg:pl-4 2xl:pl-0
+          pl-0 lg:pl-10 2xl:pl-0
           max-w-screen-2xl
           mx-auto
         `}
     >
-      <Logo className="hidden lg:block w-72 ml-6 mb-10" />
+      <Logo
+        className={`
+          hidden lg:block 
+          ml-6 mb-10
+          w-72 
+        `}
+      />
 
       <div
         className={`
@@ -55,12 +61,26 @@ export default async function Home({
           activeFiltersByCategory={activeFiltersByCategory}
         />
 
-        <section className="flex flex-col overflow-x-clip">
-          <Logo className="block lg:hidden w-40 ml-6" />
+        <section
+          className={`
+            flex flex-col 
+            overflow-x-clip
+          `}
+        >
+          <Logo
+            className={`
+              block lg:hidden 
+              ml-6 mb-6
+              w-40 
+            `}
+          />
 
           <Group
             overflow
-            className="block lg:hidden"
+            className={`
+              block lg:hidden 
+              mb-2
+            `}
             activeFilters={activeFiltersByCategory[secondaryCategory.category]}
             {...secondaryCategory}
           />
@@ -69,6 +89,16 @@ export default async function Home({
             activeFilters={activeFiltersByCategory[featuredCategory.category]}
             {...featuredCategory}
           />
+
+          <h2
+            className={`
+              mt-3 lg:mt-8 mb-5 lg:mb-8
+              text-h2 lg:text-display 
+              px-6 
+            `}
+          >
+            Restaurant&apos;s
+          </h2>
 
           <List restaurants={filteredRestaurants} />
         </section>

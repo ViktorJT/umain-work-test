@@ -32,13 +32,10 @@ export default function WelcomePage() {
       <Link
         href="/"
         className={`
-          p-2
+          p-5
           rounded-lg
-          text-center 
+          text-center font-bold
           border-white border-[1px] 
-
-          md:hover:bg-white md:hover:text-green
-          transition-colors
         `}
       >
         Continue

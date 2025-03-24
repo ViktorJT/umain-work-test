@@ -16,7 +16,20 @@ module.exports = {
         "off-white": "#FAFAFA",
       },
       fontFamily: {
-        sans: ['"SF Pro"', "sans-serif"],
+        sans: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"Segoe UI"',
+          "Roboto",
+          '"Helvetica Neue"',
+          "Arial",
+          '"Noto Sans"',
+          "sans-serif",
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
       },
       typography: {
         huge: {
@@ -37,6 +50,10 @@ module.exports = {
         h1: {
           ...baseTypographyStyles,
           fontSize: "24px",
+        },
+        h2: {
+          ...baseTypographyStyles,
+          fontSize: "20px",
         },
         title: {
           ...baseTypographyStyles,

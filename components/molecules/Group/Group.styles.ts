@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority";
 export const title = cva("text-subtitle", {
   variants: {
     overflow: {
-      true: "px-4",
+      true: "px-6",
       false: "",
     },
   },
@@ -15,7 +15,7 @@ export const title = cva("text-subtitle", {
 export const container = cva(
   `
     py-2 
-    scroll-smooth snap-x scroll-pl-4
+    scroll-smooth snap-x scroll-pl-6
   `,
   {
     variants: {
@@ -24,7 +24,7 @@ export const container = cva(
         false: "",
       },
       overflow: {
-        true: "overflow-x-auto px-4",
+        true: "overflow-x-auto px-6",
         false: "flex items-start gap-2 flex-wrap",
       },
     },
@@ -39,9 +39,9 @@ export const wrapper = cva("", {
   variants: {
     overflow: {
       true: `
-        pr-4
+        pr-6
         min-w-max 
-        flex gap-2 
+        flex gap-2
       `,
       false: "contents",
     },

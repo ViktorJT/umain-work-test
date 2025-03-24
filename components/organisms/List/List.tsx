@@ -11,10 +11,11 @@ export default function List({ restaurants, className }: Props) {
       className={cx(
         `
           grid  
-          grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(3,_minmax(0,_320px))] 
-          auto-rows-[200px]
-          gap-2 px-4
           group/list
+          auto-rows-[200px]
+          gap-2.5 md:gap-4 pl-6 pr-6 lg:pr-10 2xl:pr-0
+          grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(3,_minmax(0,_320px))] 
+
         `,
         className,
       )}
