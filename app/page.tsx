@@ -33,36 +33,44 @@ export default async function Home({
   return (
     <main
       className={`
-        grid 
-        pb-9 pt-24
-        overflow-x-clip
-        w-full mx-auto
-        max-w-screen-2xl
-        grid-cols-1 lg:grid-cols-[240px_1fr] 
-      `}
+          pb-9 pt-24 lg:pt-14
+          pl-0 lg:pl-4 2xl:pl-0
+        `}
     >
-      <Sidebar
-        className="hidden lg:flex"
-        filterGroups={filterGroups}
-        activeFiltersByCategory={activeFiltersByCategory}
-      />
+      <Logo className="hidden lg:block w-72 ml-6 mb-10" />
 
-      <div className="flex flex-col overflow-x-clip">
-        <Logo className="w-40 ml-6" />
-
-        <Group
-          className="block lg:hidden"
-          activeFilters={activeFiltersByCategory[secondaryCategory.category]}
-          overflow={true}
-          {...secondaryCategory}
+      <div
+        className={`
+          grid 
+          w-full mx-auto
+          overflow-x-clip
+          max-w-screen-2xl
+          grid-cols-1 lg:grid-cols-[240px_1fr] 
+        `}
+      >
+        <Sidebar
+          className="hidden lg:flex"
+          filterGroups={filterGroups}
+          activeFiltersByCategory={activeFiltersByCategory}
         />
 
-        <Carousel
-          activeFilters={activeFiltersByCategory[featuredCategory.category]}
-          {...featuredCategory}
-        />
+        <section className="flex flex-col overflow-x-clip">
+          <Logo className="block lg:hidden w-40 ml-6" />
 
-        <List restaurants={filteredRestaurants} />
+          <Group
+            overflow
+            className="block lg:hidden"
+            activeFilters={activeFiltersByCategory[secondaryCategory.category]}
+            {...secondaryCategory}
+          />
+
+          <Carousel
+            activeFilters={activeFiltersByCategory[featuredCategory.category]}
+            {...featuredCategory}
+          />
+
+          <List restaurants={filteredRestaurants} />
+        </section>
       </div>
     </main>
   );

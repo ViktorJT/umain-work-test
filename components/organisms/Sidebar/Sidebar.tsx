@@ -13,13 +13,13 @@ export default function Sidebar({
     <aside
       className={cx(
         `
-        panel
+          panel
 
-        p-6
-        rounded-lg
-        shadow-card
-        flex-col gap-8
-      `,
+          p-6 my-2
+          rounded-lg
+          shadow-card
+          flex-col gap-8
+        `,
         className,
       )}
     >
