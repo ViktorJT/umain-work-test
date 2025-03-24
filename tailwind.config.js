@@ -19,6 +19,17 @@ module.exports = {
         sans: ['"SF Pro"', "sans-serif"],
       },
       typography: {
+        huge: {
+          ...baseTypographyStyles,
+          fontSize: "48px",
+          fontWeight: "800",
+          lineHeight: "100%",
+        },
+        blurb: {
+          ...baseTypographyStyles,
+          lineHeight: "150%",
+          fontSize: "14px",
+        },
         display: {
           ...baseTypographyStyles,
           fontSize: "40px",
