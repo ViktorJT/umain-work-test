@@ -21,8 +21,8 @@ export default function List({ restaurants, className }: Props) {
       )}
     >
       {restaurants.length ? (
-        restaurants.map((restaurant, i) => {
-          return <Card key={restaurant.id} index={i} {...restaurant} />;
+        restaurants.map((restaurant, i: number) => {
+          return <Card key={restaurant.id + i} index={i} {...restaurant} />;
         })
       ) : (
         <NoResults />

@@ -1,10 +1,10 @@
 import { getDeliveryTimeId } from "@/utils/getDeliveryTimeId";
 
 import { ActiveFiltersByCategory } from "@/types/filter";
-import type { RestaurantWithOpenStatus } from "@/types/restaurant";
+import type { Restaurant } from "@/types/restaurant";
 
 type Props = {
-  restaurants: RestaurantWithOpenStatus[];
+  restaurants: Restaurant[];
   activeFiltersByCategory: ActiveFiltersByCategory;
 };
 

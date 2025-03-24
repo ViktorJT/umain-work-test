@@ -28,7 +28,7 @@ export default function Sidebar({
       {filterGroups.map((filterGroup, i: number) => (
         <Group
           activeFilters={activeFiltersByCategory[filterGroup.category]}
-          key={filterGroup.category}
+          key={filterGroup.category + i}
           column={i === 0}
           {...filterGroup}
         />

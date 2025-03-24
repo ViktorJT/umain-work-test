@@ -1,5 +1,7 @@
 import { cx } from "class-variance-authority";
+import { use } from "react";
 
+import { cachedGetOpenStatus } from "@/utils/cachedGetOpenStatus";
 import { formatDeliveryTime } from "@/utils/formatDeliveryTime";
 
 import { Button } from "@/components/atoms/Button";
@@ -15,9 +17,10 @@ export default function Card({
   index,
   id,
   name,
-  isOpen,
   className,
 }: Props) {
+  const isOpen = use(cachedGetOpenStatus(id));
+
   return (
     <div className={cx(container({ isOpen }), className)}>
       <Image

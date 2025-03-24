@@ -23,15 +23,15 @@ export default function Carousel({
       )}
     >
       <div className="flex gap-2.5 py-2 pr-6">
-        {filters.map((filter) => (
+        {filters.map((filter, i: number) => (
           <Tile
             className={`
               snap-start shrink-0 
               transition-shadow
             `}
             active={activeFilters.has(filter.id)}
-            key={`${filter.name}-tile`}
             category={category}
+            key={filter.id + i}
             {...filter}
           />
         ))}

@@ -8,12 +8,6 @@ export type Restaurant = {
   filter_ids: string[];
 };
 
-export type RestaurantWithOpenStatus = Restaurant & { isOpen: boolean };
-
 export type RestaurantsResponse = {
   restaurants: Restaurant[];
-};
-
-export type RestaurantsWithOpenStatusResponse = {
-  restaurants: RestaurantWithOpenStatus[];
 };
