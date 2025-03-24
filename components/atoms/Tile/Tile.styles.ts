@@ -9,7 +9,7 @@ export const tile = cva(
     rounded-lg
     shadow-card
     overflow-hidden
-    items-center justify-between
+    justify-between
   `,
   {
     variants: {

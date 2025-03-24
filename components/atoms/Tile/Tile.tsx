@@ -26,8 +26,8 @@ export default function Tile({
     >
       <p
         className={`
+          text-title text-left leading-none
           min-w-0 break-words 
-          text-title
           px-2 py-4
           flex-1 
         `}
