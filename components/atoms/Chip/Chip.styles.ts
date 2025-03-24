@@ -4,8 +4,9 @@ export const chip = cva(
   `
     panel
 
-    px-3 py-1
+    px-4 py-3
     rounded-lg
+    text-body leading-none
   `,
   {
     variants: {
