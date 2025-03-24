@@ -10,8 +10,8 @@ import Logo from "@/icons/logo.svg";
 
 import { Carousel } from "@/components/organisms/Carousel";
 import { Sidebar } from "@/components/organisms/Sidebar";
-import { List } from "@/components/organisms/List";
 import { Group } from "@/components/molecules/Group";
+import { List } from "@/components/organisms/List";
 
 export default async function Home({
   searchParams,
@@ -35,16 +35,19 @@ export default async function Home({
       className={`
         grid 
         pb-9 pt-24
-        w-full max-w-screen-xl mx-auto
+        overflow-x-clip
+        w-full mx-auto
+        max-w-screen-2xl
         grid-cols-1 lg:grid-cols-[240px_1fr] 
       `}
     >
       <Sidebar
+        className="hidden lg:flex"
         filterGroups={filterGroups}
         activeFiltersByCategory={activeFiltersByCategory}
       />
 
-      <div className="flex flex-col overflow-hidden">
+      <div className="flex flex-col overflow-x-clip">
         <Logo className="w-40 ml-6" />
 
         <Group
