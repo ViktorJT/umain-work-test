@@ -35,12 +35,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  themeColor: "#00703A",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
   openGraph: {
     description: shared.description,
     type: "website",

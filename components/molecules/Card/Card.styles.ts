@@ -39,7 +39,7 @@ export const image = cva(
   {
     variants: {
       isOpen: {
-        true: "group-hover/card:scale-125 group-hover/card:-rotate-12",
+        true: "md:group-hover/card:scale-125 md:group-hover/card:-rotate-12",
         false: "opacity-40",
       },
     },

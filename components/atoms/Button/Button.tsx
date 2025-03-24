@@ -26,14 +26,14 @@ export default function Button({
           rounded-full
           transition-colors
 
-        group-hover/card:bg-off-white
+        md:group-hover/card:bg-off-white
         `,
         className,
       )}
       href={href}
       {...props}
     >
-      <Icon className="group-hover/card:fill-green" {...icon} />
+      <Icon className="md:group-hover/card:fill-green" {...icon} />
     </Link>
   );
 }

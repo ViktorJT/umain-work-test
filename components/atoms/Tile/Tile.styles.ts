@@ -34,8 +34,8 @@ export const image = cva("shrink-0 -mr-3 duration-300 transition-transform", {
     active: {
       true: "border-green scale-110",
       false: `
-        group-hover/carousel:scale-95
-        group-hover/tile:scale-110
+        md:group-hover/carousel:scale-95
+        md:group-hover/tile:scale-110
       `,
     },
   },
