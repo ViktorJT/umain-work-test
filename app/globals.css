@@ -14,7 +14,7 @@
 
 @layer components {
   .panel {
-    @apply border-[.5px] border-black/10;
+    @apply border md:border-[.5px] border-black/10;
     @apply bg-white;
   }
 }

@@ -35,7 +35,7 @@ export default function WelcomePage() {
           p-5
           rounded-lg
           text-center font-bold
-          border-white border-[1px] 
+          border-white border
         `}
       >
         Continue
