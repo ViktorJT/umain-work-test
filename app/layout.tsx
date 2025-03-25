@@ -16,25 +16,8 @@ export const metadata: Metadata = {
   applicationName: shared.title,
   authors: [{ name: shared.me }],
   generator: "Next.js",
-  keywords: ["restaurants", "food delivery", "munchies", "dining"],
   referrer: "origin-when-cross-origin",
   creator: shared.me,
-  icons: {
-    icon: [
-      { url: "/meta/favicon.ico-16x16", sizes: "ico-16x16" },
-      { url: "/meta/favicon.ico-32x32", sizes: "ico-32x32" },
-      { url: "/meta/icon.svg", type: "image/svg+xml" },
-      { url: "/meta/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/meta/icon-512.png", sizes: "512x512", type: "image/png" },
-    ],
-    apple: [
-      {
-        url: "/meta/apple/apple-touch-icon.png",
-        sizes: "180x180",
-        type: "image/png",
-      },
-    ],
-  },
   openGraph: {
     description: shared.description,
     type: "website",
@@ -42,7 +25,7 @@ export const metadata: Metadata = {
     siteName: shared.title,
     images: [
       {
-        url: "/og/og-image.jpg",
+        url: "/og/og-image.png",
         width: 1200,
         height: 630,
         alt: shared.description,
@@ -55,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: shared.title,
     description: shared.description,
-    images: ["/meta/og/twitter-image.jpg"],
+    images: ["/og/twitter-image.png"],
     creator: "@ViktorJT",
   },
   alternates: {
